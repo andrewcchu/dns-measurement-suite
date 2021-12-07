@@ -17,11 +17,11 @@ BATCHSIZE=$((${NUM_WEBSITES} / ${WORKER}))
 
 for w in $(seq 0 $((${WORKER} - 1))); do
     if [ $w -lt $((${WORKER} - 1)) ]; then
-        ${VENV_DIRECTORY}/bin/python3 wrapper.py \
+        python3 wrapper.py \
             ${database} ${websites} ${logging} \
             ${UUID} $(($w * ${BATCHSIZE})) $(( ($w + 1) * ${BATCHSIZE})) &
     else
-        ${VENV_DIRECTORY}/bin/python3 wrapper.py \
+        python3 wrapper.py \
             ${database} ${websites} ${logging} \
             ${UUID} $(($w * ${BATCHSIZE})) ${NUM_WEBSITES} &
     fi
