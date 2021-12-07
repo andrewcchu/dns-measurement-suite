@@ -6,7 +6,7 @@ sudo snap install docker
 
 sudo docker load < har-firefox-67.0-stable-image.tar.gz
 
-git clone https://github.com/noise-lab/dns-measurement-suite.git
+git clone https://github.com/andrewcchu/dns-measurement-suite.git
 
 cd /home/vagrant/dns-measurement-suite/src/measure/dns-timing/debs
 
