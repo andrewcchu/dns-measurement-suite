@@ -92,8 +92,8 @@ def run(log, db, experiment, websites):
     for website in websites:
         random.shuffle(options)
         for recursive, dns_type in options:
-            if recursive == 'default' and dns_type in ('doh', 'dot'):
-                continue
+            # if recursive == 'default' and dns_type in ('doh', 'dot'):
+            #     continue
             run_configuration(log, db, experiment, website, recursive, dns_type)
 
 
