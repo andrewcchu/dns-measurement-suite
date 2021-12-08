@@ -12,9 +12,7 @@ cd /home/vagrant/dns-measurement-suite/src/measure/dns-timing/debs
 
 sudo apt install -y dns-root-data libcurl4-openssl-dev libssl-dev libev4 libev-dev libevent-2.1.6 libevent-core-2.1.6 libevent-openssl-2.1.6 libevent-dev libuv1 python3 python3-pip python3-dev postgresql postgresql-client dnsutils net-tools autoconf automake build-essential libtool uuid
 
-sudo dpkg -i libgetdns10_1.5.1-1.1_amd64.deb
-
-sudo dpkg -i libgetdns-dev_1.5.1-1.1_amd64.deb
+sudo dpkg -i libgetdns10_1.5.1-1.1_amd64.deb libgetdns-dev_1.5.1-1.1_amd64.deb
 
 cd ../..
 
