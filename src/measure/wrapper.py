@@ -19,7 +19,7 @@ from dns_timings import measure_dns
 
 
 class Resolvers(enum.Enum):
-    default = (None, None)
+    default = ('128.135.247.50', 'https://dns1.uchicago.edu/dns-query')
     cloudflare = ('1.1.1.1', 'https://cloudflare-dns.com/dns-query')
     google = ('8.8.8.8', 'https://dns.google/dns-query')
     quad9 = ('9.9.9.9', 'https://dns.quad9.net/dns-query')
@@ -99,12 +99,7 @@ def run(log, db, experiment, websites):
 
 def run_configuration(log, db, experiment, website, recursive, dns_type):
     # Run a measurment for a single website for a given configuration
-    resolver_ip = None
-    resolver_uri = None
-    if recursive == "default":
-        resolver_ip = get_default_nameservers()
-    else:
-        resolver_ip, resolver_uri = Resolvers[recursive].value
+    resolver_ip, resolver_uri = Resolvers[recursive].value
 
     # Collect a HAR, ping time to resolver, and
     # bytes sent/received for a DNS query
